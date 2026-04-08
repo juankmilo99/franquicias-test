@@ -15,14 +15,6 @@ API backend reactiva para gestión de franquicias, sucursales y productos.
 - `infrastructure`: adaptadores y repositorios
 - `entrypoints`: controladores, DTOs y handler de errores
 
-## Configuración
-La conexión a PostgreSQL se configura con variables de entorno:
-- `SPRING_R2DBC_URL`
-- `SPRING_R2DBC_USERNAME`
-- `SPRING_R2DBC_PASSWORD`
-
-En Render, agrega esas variables en el servicio.
-
 ## Ejecutar
 ```bash
 ./mvnw spring-boot:run
@@ -51,13 +43,17 @@ mvnw.cmd spring-boot:run
 - `PATCH /api/products/{productId}/name`
 
 ## Swagger (probar en navegador)
-Con la app levantada, abre:
+Produccion (Render):
+- `https://franquicias-test.onrender.com/swagger-ui/index.html#/`
+
+Local:
 - `http://localhost:8080/swagger`
 - `http://localhost:8080/swagger-ui/index.html`
 - `http://localhost:8080/swagger-ui.html`
 
 OpenAPI JSON:
 - `http://localhost:8080/v3/api-docs`
+- `https://franquicias-test.onrender.com/v3/api-docs`
 
 ## Docker
 Construir imagen:
@@ -69,6 +65,4 @@ Ejecutar contenedor:
 docker run -p 8080:8080 franquicias-api
 ```
 
-## Terraform (ejemplo básico Neon)
-Revisar carpeta:
-- `infra/terraform`
+
